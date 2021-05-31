@@ -1,0 +1,72 @@
+﻿<Window x:Class="Работа.Director_info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Работа"
+        mc:Ignorable="d" 
+        Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="603*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="Sotr" AutoGenerateColumns="False" Visibility="Visible"
+                          MaxHeight="280"
+                          MaxWidth="800"
+                          HorizontalAlignment="Left"
+                          HorizontalContentAlignment="Center"
+                          Width="750"
+                          HorizontalGridLinesBrush="Black"
+                          RowBackground="#E99FAF"
+                          AlternatingRowBackground="White"
+                          RowDetailsVisibilityMode="VisibleWhenSelected"
+                          CanUserAddRows="True"
+                          CanUserDeleteRows="True"
+                          Padding="0,0,2,3" BorderBrush="#747474" BorderThickness="1,1,2,3" Focusable="True"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          HorizontalScrollBarVisibility="Visible" Margin="21,67,0,10" Grid.ColumnSpan="3" Background="Transparent" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Gr_id" Header="Id" Binding="{Binding Path=id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="35" Foreground="#FFA40C3C"/>
+                <DataGridTextColumn x:Name="Gr_Co" Header="Фамилия" Binding="{Binding Path=Surname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn x:Name="Gr_Za" Header="Имя" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn x:Name="Gr_Ok" Header="Отчество" Binding="{Binding Path=Patronymic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn x:Name="Gr_Voz" Header="Возраст" Binding="{Binding Path=Date_of_birthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn x:Name="Gr_Zakaz" Header="Количество заказов" Binding="{Binding Path=Number_of_completed_orders, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="127"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Vertical" Margin="132.887,40,59,342" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel x:Name="FamSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <Label Content="Фамилия" Foreground="#FFA40C3C" />
+                        <TextBox x:Name="FamSearch1" Width="200" Foreground="#FFA40C3C" VerticalContentAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0">
+                    <Button ToolTip="Нажмите для поиска" Content="Поиск" Width="60" Click="Search" Style="{StaticResource ButtonStyle}"  />
+                    <Button ToolTip="Нажмите для сброса фильтров" Content="Сброс" Width="60" Margin="10,0,0,0" Click="ResetSearch" Style="{StaticResource ButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Label Content="Информация о сотрудниках" Width="370" Height="35" FontFamily="TimesNewRoman" FontSize="18" Margin="152.887,5,80,379" HorizontalContentAlignment="Center" Grid.Column="1" Foreground="#FFA40C3C"/>
+        <Button x:Name="_close"  Height="20" Margin="95,5,15,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="_close_Click" Grid.Column="2">
+            <Button.Content>
+                <Image Source="/Работа;component/Picture/close_1.jpg" />
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="Работа.Views.Realty_info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Работа.Views"
+        mc:Ignorable="d"
+        Height="450" Width="820" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <DataGrid x:Name="Documents" AutoGenerateColumns="False" Visibility="Visible" ToolTip=""
+                          MaxHeight="280"
+                          MaxWidth="810"
+                          HorizontalAlignment="Left"
+                          HorizontalContentAlignment="Center"
+                          Width="792"
+                          HorizontalGridLinesBrush="Black"
+                          RowBackground="#E99FAF"
+                          AlternatingRowBackground="White"
+                          RowDetailsVisibilityMode="VisibleWhenSelected"
+                          CanUserAddRows="True"
+                          CanUserDeleteRows="True"
+                          Padding="0,0,2,3" BorderBrush="#747474" BorderThickness="1,1,2,3" Focusable="True"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          HorizontalScrollBarVisibility="Visible" Margin="0,27,0,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Gr_Name" Header="Название" Binding="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                <DataGridComboBoxColumn x:Name="Gr_Nedv" Header="Тип недвижимости" 
+                                                SelectedValueBinding="{Binding Path=id_Realty_type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"
+                                                DisplayMemberPath="Type" SelectedValuePath="id"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="98"/>
+                <DataGridTextColumn Header="Площадь" Binding="{Binding Path=Square, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Информация о доступных недвижимостях" Margin ="211,10,211,374" Width="370" Height="35" FontFamily="TimesNewRoman" FontSize="18" HorizontalContentAlignment="Center" Foreground="#FFA40C3C"/>
+        <Button x:Name="_back" Content="Назад" Width="60" Height="30" Margin="10,369,722,10" Click="_back_Click" Style="{StaticResource ButtonStyle}"/>
+        <Button x:Name="_close"  Height="20" Margin="770,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="_close_Click">
+            <Button.Content>
+                <Image Source="/Работа;component/Picture/close_1.jpg" />
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>
