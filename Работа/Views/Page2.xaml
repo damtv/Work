@@ -1,0 +1,100 @@
+﻿<Page x:Class="Работа.Views.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Работа.Views"
+      mc:Ignorable="d"
+      Height="auto" Width="auto" 
+      Title="Список" Loaded="Page_Loaded">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <GroupBox x:Name="_Search" Margin="0,0,0,0">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Поиск" VerticalAlignment="Center" Foreground="#FFA40C3C" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical">
+                            <StackPanel x:Name="TitleSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Label Content="Название" Foreground="#FFA40C3C"/>
+                                <TextBox x:Name="TitleSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите название" />
+                            </StackPanel>
+                            <StackPanel x:Name="AddressSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Label Content="Адрес" Foreground="#FFA40C3C" />
+                                <TextBox x:Name="AddressSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите адрес" />
+                            </StackPanel>
+                            <StackPanel x:Name="StatusSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                    <Label Content="Статус" Foreground="#FFA40C3C" />
+                                <TextBox x:Name="StatusSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите статус" />
+                                </StackPanel>
+                            <StackPanel x:Name="SquaeSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Label Content="Площадь" Foreground="#FFA40C3C" />
+                                <TextBox x:Name="SquaeSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите площадь" />
+                            </StackPanel>
+                        </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                <Button ToolTip="Нажмите для поиска" Content="Поиск" Width="60" Click="Search" Style="{StaticResource ButtonStyle_page}"/>
+                                <Button ToolTip="Нажмите для сброса фильтров" Content="Сброс" Width="60" Margin="10,0,0,0" Click="ResetSearch" Style="{StaticResource ButtonStyle_page}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Height="auto">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Список недвижимости" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#FFA40C3C"/>
+                        </StackPanel>
+                    </GroupBox.Header>
+                <DataGrid x:Name="Documents" AutoGenerateColumns="False" Visibility="Visible"
+                    MaxHeight="400"
+                          MaxWidth="900"
+                          HorizontalAlignment="Left"
+                          HorizontalContentAlignment="Center"
+                          Width="auto"
+                          HorizontalGridLinesBrush="Black"
+                          VerticalGridLinesBrush="Black"
+                          RowBackground="#E99FAF"
+                          AlternatingRowBackground="White"
+                          RowDetailsVisibilityMode="VisibleWhenSelected"
+                          CanUserAddRows="True"
+                          CanUserDeleteRows="True"
+                          Padding="0,0,2,3" BorderBrush="#747474" BorderThickness="1,1,2,3" Focusable="True"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow"
+                          RowEditEnding="SaveFriend"
+                          AddingNewItem="IsAddEdit"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          HorizontalScrollBarVisibility="Visible" PreviewKeyDown="PreviewKey">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="Gr_Name" Header="Название" Binding="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                        <DataGridTextColumn x:Name="Gr_Price" Header="Цена (руб.)" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                        <DataGridTextColumn x:Name="Gr_Address" Header="Адрес" Binding="{Binding Path=Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                        <DataGridComboBoxColumn x:Name="Gr_Nedv" Header="Тип недвижимости" 
+                                                SelectedValueBinding="{Binding Path=id_Realty_type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"
+                                                DisplayMemberPath="Type" SelectedValuePath="id"/>
+                        <DataGridTextColumn x:Name="Gr_Status" Header="Статус" Binding="{Binding Path=Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="98"/>
+                        <DataGridTextColumn x:Name="Gr_Squar" Header="Площадь" Binding="{Binding Path=Square, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+</Page>

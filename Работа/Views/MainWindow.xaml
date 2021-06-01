@@ -8,8 +8,8 @@
         FontSize="16"
         SizeToContent="WidthAndHeight"
         Height="auto" Width="auto"
-        ResizeMode="CanResize" WindowStartupLocation="CenterScreen" Icon="/Работа;component/Picture/backgraund_2.png" >
-    
+        ResizeMode="CanResize" WindowStartupLocation="CenterScreen" Icon="/Работа;component/Picture/backgraund_2.png" WindowStyle="None" >
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -42,5 +42,10 @@
             <Button Content="Вход" Width="60" HorizontalAlignment="Left" Margin="0 0 20 0"
                     ToolTip="Нажмите для проверки регистрационных данных" Height="25" Click="Button_Click" VerticalAlignment="Bottom" Style="{StaticResource ButtonStyle_login}"/>
         </StackPanel>
+        <Button x:Name="_close"  Height="20" Margin="299,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="_close_Click">
+            <Button.Content>
+                <Image Source="/Работа;component/Picture/close_1.jpg" />
+            </Button.Content>
+        </Button>
     </Grid>
 </Window>

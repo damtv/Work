@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Работа.Views;
@@ -31,26 +32,6 @@ namespace Работа
             {
                 case pageDemo.demoPge:
                     FrameMainDemo.Navigate(new Page1(this));
-                    break;
-            }
-        }
-        private void radiButton(object sender, RoutedEventArgs e)
-        {
-            RadioButton li = (sender as RadioButton);
-            if (li.Name == "R1_1")
-            {
-                Grup.Visibility = Visibility.Visible;
-                Grup1.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Grup.Visibility = Visibility.Collapsed;
-                Grup1.Visibility = Visibility.Collapsed;
-            }
-            switch (li.Name)
-            {
-                case "R1_1":
-                    OpenPageDemo(pageDemo.demoPge);
                     break;
             }
         }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Работа"
         mc:Ignorable="d"
-        Height="auto" Width="auto" WindowStartupLocation="Manual" SizeToContent="WidthAndHeight" Closed="closed" >
+        Height="auto" Width="auto" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Closed="closed" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -33,8 +33,6 @@
             <StackPanel Orientation="Vertical" Margin="20,10,0,0">
                                 <GroupBox Header="Режимы работы" Margin="0,10,10,10" Foreground="#FFA40C3C">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton x:Name="R1_1" GroupName="Gr" Content="Список сотрудников"
-                                     Margin="10,10,10,0" IsThreeState="True" Checked="radiButton" Foreground="#FFA40C3C" />
                         <GroupBox x:Name="Grup" Margin="30,5,10,0">
                             <GroupBox.Header>
                                 <StackPanel Orientation="Horizontal">
@@ -53,7 +51,6 @@
                         <GroupBox x:Name="Grup1" Margin="30,5,0,0">
                             <GroupBox.Header>
                                 <StackPanel Orientation="Horizontal">
-
                                     <TextBlock Text="Настройка списка клиентов" VerticalAlignment="Center" Margin="5,0,0,0"/>
                                 </StackPanel>
                             </GroupBox.Header>

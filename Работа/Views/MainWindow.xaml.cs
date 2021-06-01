@@ -14,7 +14,7 @@ namespace Работа
         Entities context = new Entities();
         public MainWindow()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             InitializeComponent();
         }
 
@@ -52,6 +52,11 @@ namespace Работа
             {
                 MessageBox.Show("Пользователь не найден!");
             }
+        }
+
+        private void _close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

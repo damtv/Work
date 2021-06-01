@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Работа"
         mc:Ignorable="d" 
-        Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" >
+        Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="58*"/>
@@ -53,7 +53,7 @@
                 <StackPanel Orientation="Vertical">
                     <StackPanel x:Name="FamSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                         <Label Content="Фамилия" Foreground="#FFA40C3C" />
-                        <TextBox x:Name="FamSearch1" Width="200" Foreground="#FFA40C3C" VerticalContentAlignment="Center" />
+                        <TextBox x:Name="FamSearch1" Width="200" Foreground="#FFA40C3C" VerticalContentAlignment="Center" ToolTip="Введите фамилию"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0">

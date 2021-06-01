@@ -5,38 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Работа.Views"
         mc:Ignorable="d"
-        Height="450" Width="820" WindowStartupLocation="CenterScreen" >
+        Height="auto" Width="auto" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="None" >
     <Grid>
-        <DataGrid x:Name="Documents" AutoGenerateColumns="False" Visibility="Visible" ToolTip=""
-                          MaxHeight="280"
-                          MaxWidth="810"
-                          HorizontalAlignment="Left"
-                          HorizontalContentAlignment="Center"
-                          Width="792"
-                          HorizontalGridLinesBrush="Black"
-                          RowBackground="#E99FAF"
-                          AlternatingRowBackground="White"
-                          RowDetailsVisibilityMode="VisibleWhenSelected"
-                          CanUserAddRows="True"
-                          CanUserDeleteRows="True"
-                          Padding="0,0,2,3" BorderBrush="#747474" BorderThickness="1,1,2,3" Focusable="True"
-                          SelectionMode="Single"
-                          SelectionUnit="FullRow"
-                          ScrollViewer.VerticalScrollBarVisibility="Visible"
-                          HorizontalScrollBarVisibility="Visible" Margin="0,27,0,50">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="Gr_Name" Header="Название" Binding="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
-                <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
-                <DataGridComboBoxColumn x:Name="Gr_Nedv" Header="Тип недвижимости" 
-                                                SelectedValueBinding="{Binding Path=id_Realty_type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"
-                                                DisplayMemberPath="Type" SelectedValuePath="id"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="98"/>
-                <DataGridTextColumn Header="Площадь" Binding="{Binding Path=Square, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="133"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label Content="Информация о доступных недвижимостях" Margin ="211,10,211,374" Width="370" Height="35" FontFamily="TimesNewRoman" FontSize="18" HorizontalContentAlignment="Center" Foreground="#FFA40C3C"/>
-        <Button x:Name="_back" Content="Назад" Width="60" Height="30" Margin="10,369,722,10" Click="_back_Click" Style="{StaticResource ButtonStyle}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="338"/>
+            <ColumnDefinition Width="auto" MinWidth="151"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="1">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Фильтр" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#FFA40C3C"/>
+                </StackPanel>
+            </GroupBox.Header>
+            <StackPanel Orientation="Vertical" Margin="20,10,0,0">
+                <GroupBox Header="Режимы работы" Margin="0,10,10,10" Foreground="#FFA40C3C">
+                    <StackPanel Orientation="Vertical">
+                        <GroupBox x:Name="Grup" Margin="30,5,10,0">
+                            <GroupBox.Header>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock Text="Настройка поиска" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </GroupBox.Header>
+                            <StackPanel Orientation="Vertical">
+                                <CheckBox x:Name="Check_1" Content="Название" Margin="10,10,10,0" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C" />
+                                <CheckBox x:Name="Check_3" Content="Адрес" Margin="10,5,0,0" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check_5" Content="Статус" Margin="10,5,10,0" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check_6" Content="Площадь" Margin="10,5,0,0" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="Grup1" Margin="30,5,0,0">
+                            <GroupBox.Header>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock Text="Настройка списка недвижимости" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                </StackPanel>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <CheckBox x:Name="Check2_1" Content="Название" IsChecked="True" Margin="5,10,0,5" Click="Click_Check1"  Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C" />
+                                <CheckBox x:Name="Check2_2" Content="Цена" IsChecked="True" Grid.Row="1" Margin="5,0,0,5" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check2_3" Content="Адрес" IsChecked="True" Grid.Row="2" Margin="5,0,0,5" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check2_4" Content="Тип недвижимости" IsChecked="True" Grid.Row="3" Margin="5,0,0,5" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check2_5" Content="Статус" IsChecked="True" Grid.Row="4" Margin="5,0,0,10" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                                <CheckBox x:Name="Check2_6" Content="Площадь" IsChecked="True" Grid.Column="1" Margin="0,10,0,5" Click="Click_Check1" Foreground="#FFA40C3C"  BorderBrush="#FFA40C3C"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+        <Frame x:Name="Frame_1" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" Margin="0,0,0,30"/>
+        <Label Content="Информация о недвижимостях" Grid.Column="0" Grid.ColumnSpan="2" Width="370" Height="35" FontFamily="TimesNewRoman" FontSize="18" HorizontalContentAlignment="Center" Foreground="#FFA40C3C"/>
+        <Button x:Name="_back" Content="Назад" Width="60" Height="30" Click="_back_Click" Style="{StaticResource ButtonStyle}" Grid.Column="0" Margin="10,5,300,1"/>
         <Button x:Name="_close"  Height="20" Margin="770,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="_close_Click">
             <Button.Content>
                 <Image Source="/Работа;component/Picture/close_1.jpg" />

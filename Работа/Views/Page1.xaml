@@ -2,7 +2,7 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:local="clr-namespace:Работа"
       mc:Ignorable="d"  Loaded="PageLoad"
@@ -37,23 +37,23 @@
                         <StackPanel Orientation="Vertical">
                             <StackPanel x:Name="FamSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Label Content="Фамилия" Foreground="#FFA40C3C"/>
-                                <TextBox x:Name="FamSearch1" Width="200" Foreground="#FFA40C3C" />
+                                <TextBox x:Name="FamSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите фамилию"/>
                             </StackPanel>
                             <StackPanel x:Name="ImySearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Label Content="Имя" Foreground="#FFA40C3C" />
-                                <TextBox x:Name="ImySearch1" Width="200" Foreground="#FFA40C3C"/>
+                                <TextBox x:Name="ImySearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите имя" />
                             </StackPanel>
                             <StackPanel x:Name="OtchSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Label Content="Отчество" Foreground="#FFA40C3C" />
-                                <TextBox x:Name="OtchSearch1" Width="200" Foreground="#FFA40C3C"/>
+                                <TextBox x:Name="OtchSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите отчество" />
                             </StackPanel>
                             <StackPanel x:Name="MobSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Label Content="Телефон" Foreground="#FFA40C3C" />
-                                <TextBox x:Name="MobSearch1" Width="200" Foreground="#FFA40C3C"/>
+                                <TextBox x:Name="MobSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите телефон"/>
                             </StackPanel>
                             <StackPanel x:Name="EmailSearch" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                                 <Label Content="Email" Foreground="#FFA40C3C" />
-                                <TextBox x:Name="EmailSearch1" Width="200" Foreground="#FFA40C3C"/>
+                                <TextBox x:Name="EmailSearch1" Width="200" Foreground="#FFA40C3C" ToolTip="Введите Email"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0">
@@ -69,7 +69,7 @@
                         <TextBlock Text="Список клиентов" VerticalAlignment="Center" Margin="5,0,0,0" Foreground="#FFA40C3C"/>
                     </StackPanel>
                 </GroupBox.Header>
-                <DataGrid x:Name="FriendsGrid" AutoGenerateColumns="False" Visibility="Visible" ToolTip=""
+                <DataGrid x:Name="FriendsGrid" AutoGenerateColumns="False" Visibility="Visible"
                           MaxHeight="400"
                           MaxWidth="900"
                           HorizontalAlignment="Left"

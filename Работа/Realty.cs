@@ -16,7 +16,7 @@ namespace Работа
     {
         public int id { get; set; }
         public string Title { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public Nullable<double> Price { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
         public string Square { get; set; }

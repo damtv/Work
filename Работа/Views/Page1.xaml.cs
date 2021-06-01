@@ -151,7 +151,6 @@ namespace Работа
             {
                 Gr_Coin.Visibility = Visibility.Collapsed;
             }
-            pw.R1_1.IsChecked = true;
             FriendsGrid.ItemsSource = pw.context.Customers.ToList();
             Gender.ItemsSource = pw.context.Gender.ToList();
             Gr_Ned.ItemsSource = pw.context.Realty_type.ToList();
@@ -217,15 +216,11 @@ namespace Работа
                         Surname = num_id.Surname,
                         Name = num_id.Name,
                         Patronymic = num_id.Patronymic,
-                        //idGender = num_id.idGender,
-                        //YearOfBirth = num_id.YearOfBirth,
                         Phone = num_id.Phone,
                         Email = num_id.Email,
                         Address = num_id.Address
 
                     });
-
-
                     if (pw.context.SaveChanges() == 0)
                     {
                         MessageBox.Show("Ошибка", "Ошибка записи", MessageBoxButton.OK,

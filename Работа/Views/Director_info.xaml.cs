@@ -10,7 +10,6 @@ namespace Работа
     /// </summary>
     public partial class Director_info : Window
     {
-
         Entities context = new Entities();
         public Director_info()
         {
@@ -49,6 +48,7 @@ namespace Работа
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Sotr.ItemsSource = context.Staff.ToList();
+            
         }
     }
 }
