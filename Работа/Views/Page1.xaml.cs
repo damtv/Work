@@ -211,16 +211,18 @@ namespace Работа
                 else
                 {
                     var num_id = e.Row.Item as Customers;
-                    pw.context.Customers.Add(new Customers
-                    {
-                        Surname = num_id.Surname,
-                        Name = num_id.Name,
-                        Patronymic = num_id.Patronymic,
-                        Phone = num_id.Phone,
-                        Email = num_id.Email,
-                        Address = num_id.Address
-
-                    });
+                    Customers realty = new Customers();
+                    realty.Name = num_id.Name;
+                    realty.Surname = num_id.Surname;
+                    realty.Patronymic = num_id.Patronymic;
+                    realty.Date_of_birthday = num_id.Date_of_birthday;
+                    realty.Phone = num_id.Phone;
+                    realty.Email = num_id.Email;
+                    realty.Address = num_id.Address;
+                    realty.id_Gender = num_id.id_Gender;
+                    realty.Prepayment = num_id.Prepayment;
+                    realty.id_Realty_type = num_id.id_Realty_type;
+                    pw.context.Customers.Add(realty);
                     if (pw.context.SaveChanges() == 0)
                     {
                         MessageBox.Show("Ошибка", "Ошибка записи", MessageBoxButton.OK,

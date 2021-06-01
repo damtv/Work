@@ -24,7 +24,7 @@ namespace Работа
         public string Email { get; set; }
         public Nullable<int> id_Gender { get; set; }
         public Nullable<int> id_Realty_type { get; set; }
-        public decimal Prepayment { get; set; }
+        public double Prepayment { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Realty_type Realty_type { get; set; }

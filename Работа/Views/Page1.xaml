@@ -124,7 +124,7 @@
                         <DataGridComboBoxColumn x:Name="Gender" Header="Пол" 
                                                 SelectedValueBinding="{Binding Path=id_Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                 DisplayMemberPath="Gender1" SelectedValuePath="id"/>
-                        <DataGridTextColumn x:Name="Gr_Coin" Header="Предоплата" Binding="{Binding Path=Prepayment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridTextColumn x:Name="Gr_Coin" Header="Предоплата (руб.)" Binding="{Binding Path=Prepayment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         <DataGridComboBoxColumn x:Name="Gr_Ned" Header="Тип недвижимости" 
                                                 SelectedValueBinding="{Binding Path=id_Realty_type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                 DisplayMemberPath="Type" SelectedValuePath="id"/>

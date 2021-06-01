@@ -19,7 +19,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="id_Gender" Type="int" />
           <Property Name="id_Realty_type" Type="int" />
-          <Property Name="Prepayment" Type="money" Nullable="false" />
+          <Property Name="Prepayment" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -205,7 +205,7 @@
           <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="id_Gender" Type="Int32" />
           <Property Name="id_Realty_type" Type="Int32" />
-          <Property Name="Prepayment" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Prepayment" Type="Double" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Customers_Gender" FromRole="Customers" ToRole="Gender" />
           <NavigationProperty Name="Realty_type" Relationship="Self.FK_Customers_Realty_type" FromRole="Customers" ToRole="Realty_type" />
         </EntityType>
